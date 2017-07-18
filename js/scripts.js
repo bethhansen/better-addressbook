@@ -22,9 +22,9 @@ Address.prototype.fullAddress = function () {
 //User Interface Logic
 $(document).ready(function() {
   $('#add-address').click(function() {
-    $('#new-addresses').append('<div class="new-address">' +
+    $('#new-addresses').append('<div class="new-address additionalOnes">' +
                                  '<div class="form-group">' +
-                                  '<h4>Additional Address</h4>' +
+                                  '<h4>Additional Address:</h4>' +
                                    '<label for="new-street">Street</label>' +
                                    '<input type="text" class="form-control new-street">' +
                                  '</div>' +
@@ -70,9 +70,8 @@ $(document).ready(function() {
       newContact.addresses.forEach(function(address) {
         $('ul#addresses').append('<li>' + address.fullAddress() + '</li>');
       });
-
-
     });
     $('.form-control').val('');
+    $('.additionalOnes').remove();
   });
 });
